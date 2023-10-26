@@ -1,12 +1,12 @@
-import { useState, useEffect, useContext } from 'react'
-import Header from '../../components/Header'
-import Title from '../../components/Title'
-import { FiPlusCircle } from 'react-icons/fi'
-import { AuthContext } from '../../contexts/auth'
-import { db } from '../../services/firebaseConnection'
-import { collection, getDocs, getDoc, doc, addDoc, updateDoc } from 'firebase/firestore'
-import { useParams, useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { useState, useEffect, useContext } from 'react';
+import Header from '../../components/Header';
+import Title from '../../components/Title';
+import { FiPlusCircle } from 'react-icons/fi';
+import { AuthContext } from '../../contexts/auth';
+import { db } from '../../services/firebaseConnection';
+import { collection, getDocs, getDoc, doc, addDoc, updateDoc } from 'firebase/firestore';
+import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import './new.css';
 
 const listRef = collection(db, "customers");

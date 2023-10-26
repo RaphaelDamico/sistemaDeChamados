@@ -1,27 +1,27 @@
-import { useContext, useState } from 'react'
-import Header from '../../components/Header'
-import Title from '../../components/Title'
+import { useContext, useState } from 'react';
+import Header from '../../components/Header';
+import Title from '../../components/Title';
 
-import { FiSettings, FiUpload } from 'react-icons/fi'
-import avatar from '../../assets/avatar.png'
-import { AuthContext } from '../../contexts/auth'
+import { FiSettings, FiUpload } from 'react-icons/fi';
+import avatar from '../../assets/avatar.png';
+import { AuthContext } from '../../contexts/auth';
 
-import { db, storage } from '../../services/firebaseConnection'
-import { doc, updateDoc } from 'firebase/firestore'
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { db, storage } from '../../services/firebaseConnection';
+import { doc, updateDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
 import './profile.css';
 
 export default function Profile() {
     const { user, storageUser, setUser, logout } = useContext(AuthContext);
 
-    const [avatarUrl, setAvatarUrl] = useState(user && user.avatarUrl)
+    const [avatarUrl, setAvatarUrl] = useState(user && user.avatarUrl);
     const [imageAvatar, setImageAvatar] = useState(null);
 
-    const [nome, setNome] = useState(user && user.nome)
-    const [email, setEmail] = useState(user && user.email)
+    const [nome, setNome] = useState(user && user.nome);
+    const [email, setEmail] = useState(user && user.email);
 
     function handleFile(e) {
         if(e.target.files[0]) {

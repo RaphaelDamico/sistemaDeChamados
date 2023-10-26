@@ -1,17 +1,17 @@
-import { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../../contexts/auth'
-import Header from '../../components/Header'
-import Title from '../../components/Title'
-import { FiPlus, FiMessageSquare, FiSearch, FiEdit2 } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import { collection, getDocs, orderBy, limit, startAfter, query, doc } from 'firebase/firestore'
-import { db } from '../../services/firebaseConnection'
-import { format } from 'date-fns'
-import Modal from '../../components/Modal'
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../contexts/auth';
+import Header from '../../components/Header';
+import Title from '../../components/Title';
+import { FiPlus, FiMessageSquare, FiSearch, FiEdit2 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { collection, getDocs, orderBy, limit, startAfter, query, doc } from 'firebase/firestore';
+import { db } from '../../services/firebaseConnection';
+import { format } from 'date-fns';
+import Modal from '../../components/Modal';
 
-import './dashboard.css'
+import './dashboard.css';
 
-const listRef = collection(db, "chamados")
+const listRef = collection(db, "chamados");
 
 export default function Dashboard() {
     const { logout } = useContext(AuthContext);

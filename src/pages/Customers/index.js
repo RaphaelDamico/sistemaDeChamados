@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import Header from '../../components/Header'
-import Title from '../../components/Title'
+import Header from '../../components/Header';
+import Title from '../../components/Title';
 
-import { FiUser } from 'react-icons/fi'
+import { FiUser } from 'react-icons/fi';
 
-import { db } from '../../services/firebaseConnection'
-import { addDoc, collection} from 'firebase/firestore'
+import { db } from '../../services/firebaseConnection';
+import { addDoc, collection} from 'firebase/firestore';
 
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
 export default function Customers() {
     const [nome, setNome] = useState('')
